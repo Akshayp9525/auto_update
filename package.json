@@ -1,0 +1,33 @@
+{
+  "name": "electron-auto-update-app",
+  "version": "0.1.0",
+  "description": "A sample Electron app with auto-update functionality",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "publish": "electron-builder --publish always"
+  },
+  "build": {
+    "appId": "com.example.electronautoupdateapp",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "your-github-username",
+        "repo": "your-repo-name"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  },
+  "devDependencies": {
+    "electron": "^32.0.1",
+    "electron-builder": "^23.0.0",
+    "electron-log": "^4.0.0",
+    "electron-updater": "^5.0.0"
+  }
+}
